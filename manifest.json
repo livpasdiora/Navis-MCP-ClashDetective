@@ -1,0 +1,35 @@
+{
+  "dxt_version": "0.1",
+  "name": "waabe-navisworks-mcp",
+  "version": "1.0.0",
+  "description": "Navisworks Manage 2026 MCP Server for element queries and model analysis. ",
+  "author": {
+    "name": "WAABE",
+    "email": "n.rube@waabe.com",
+    "url": "https://www.waabe.com"
+  },
+  "license": "MIT",
+  "homepage": "https://www.waabe.com",
+  "documentation": "https://github.com/kikki/MCP-Add-in-Autodesk_Navisworks_Manage_2026",
+  "support": "https://github.com/kikki/MCP-Add-in-Autodesk_Navisworks_Manage_2026",
+  "icon": "icon.png",
+
+  "server": {
+    "type": "node",
+    "entry_point": "server/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [ "${__dirname}/server/index.js" ],
+      "env": {
+        "NAVISWORKS_API_PORT": "${user_config.api_port}"
+      }
+    }
+  },
+
+  "user_config": {
+    "api_port": {
+      "type": "string",
+      "title": "Navisworks API Port",
+      "description": "Port des Navisworks MCP Servers (Standard: 1234)",
+      "default": "1234",
+      "req
